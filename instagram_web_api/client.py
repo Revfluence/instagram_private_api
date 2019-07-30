@@ -310,8 +310,8 @@ class Client(object):
 
     @staticmethod
     def _extract_rhx_gis(html):
-    	tmp_str = ':{"id":{"{}"}}'.format(random.randint(10000000,99999999))
-    	return hashlib.md5(tmp_str.encode()).hexdigest()
+        tmp_str = ':{"id":"{'+ str(random.randint(10000000,99999999)) +'}"}'
+        return hashlib.md5(tmp_str.encode()).hexdigest()
 
     @staticmethod
     def _extract_csrftoken(html):
